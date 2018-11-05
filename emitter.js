@@ -49,8 +49,7 @@ function getEmitter() {
                 .forEach(
                     eventName => {
                         events[eventName] = events[eventName].filter(
-                            (existedEvent) => context.focus !== existedEvent.context.focus &&
-                                context.wisdom !== existedEvent.context.wisdom
+                            (existedEvent) => context !== existedEvent.context
                         );
                     }
                 );
