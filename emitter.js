@@ -44,7 +44,7 @@ function getEmitter() {
          */
         off: function (event, context) {
             Object.keys(events).filter(eventName => {
-                return eventName.includes(event);
+                return eventName.startsWith(event + '.') || eventName === event;
             })
                 .forEach(
                     eventName => {
